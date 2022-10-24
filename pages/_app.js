@@ -1,7 +1,13 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import Layout from "../components/layout";
+import { AppStateProvider } from "../contexts/state";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <AppStateProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </AppStateProvider>
+  );
 }
-
-export default MyApp
